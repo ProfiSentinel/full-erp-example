@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Lokální databáze (nechceme nahrávat testovací databázi)
+*.db
+*.sqlite3
+
+# Virtuální prostředí
+.venv/
+venv/
+env/
+
+# IDE nastavení
+.vscode/
+.idea/
