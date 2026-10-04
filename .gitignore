@@ -3,6 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Pytest & testy
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Citlivé údaje a konfigurace (EXTRÉMNĚ DŮLEŽITÉ)
+.env
+*.env
+
 # Lokální databáze (nechceme nahrávat testovací databázi)
 *.db
 *.sqlite3
@@ -15,3 +24,7 @@ env/
 # IDE nastavení
 .vscode/
 .idea/
+
+# OS balast (macOS & Windows)
+.DS_Store
+Thumbs.db
