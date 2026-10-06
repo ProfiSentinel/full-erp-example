@@ -14,7 +14,7 @@ A modern sales and inventory ERP system built with Python, FastAPI, and SQLAlche
 - [x] ORM models (Users, Products, Stock Movements, Orders, Partners)
 - [x] Pydantic schemas (DTOs) for input/output validation
 - [x] Database initialization & test data seeding script (`init_db.py`)
-- [ ] REST API endpoints (CRUD)
+- [x] REST API endpoints (CRUD)
 - [ ] Web GUI via HTMX
 - [ ] Pytest test suite
 
