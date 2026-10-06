@@ -1,4 +1,3 @@
-import traceback
 import sys
 from app.database import engine, SessionLocal, Base
 from app import models
@@ -100,7 +99,6 @@ def init_database():
 
     except Exception as e:
         print(f"Error initializing database: {e}")
-        traceback.print_exc() # pro výpis traceback do konzole při chybě (pouze pro testování)
         db.rollback()
 
     finally:
