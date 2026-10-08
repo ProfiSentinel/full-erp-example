@@ -8,11 +8,10 @@ __pycache__/
 .coverage
 htmlcov/
 
-# Citlivé údaje a konfigurace (EXTRÉMNĚ DŮLEŽITÉ)
+# Citlivé údaje a konfigurace 
 .env
 *.env
-
-# Lokální databáze (nechceme nahrávat testovací databázi)
+# Lokální databáze 
 *.db
 *.sqlite3
 
