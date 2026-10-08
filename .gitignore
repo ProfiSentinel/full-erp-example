@@ -9,8 +9,8 @@ __pycache__/
 htmlcov/
 
 # Citlivé údaje a konfigurace 
-.env
 *.env
+
 # Lokální databáze 
 *.db
 *.sqlite3
