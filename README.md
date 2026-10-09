@@ -4,12 +4,12 @@ Lehký, rychlý a modulární ERP systém postavený na moderním Python backend
 
 ## 🚀 Hlavní technologie (Tech Stack)
 
-* **Backend:** [FastAPI](https://fastapi.tiangolo.com/) (Python 3)
-* **ORM / Databáze:** [SQLAlchemy](https://www.sqlalchemy.org/) + SQLite
-* **Validace dat:** [Pydantic v2](https://docs.pydantic.dev/) (včetně `email-validator`)
-* **Šablonovací systém:** [Jinja2](https://jinja.palletsprojects.com/)
-* **Frontend & Styling:** [Tailwind CSS](https://tailwindcss.com/) (přes CDN) + [HTMX](https://htmx.org/)
-* **Webový server:** [Uvicorn](https://www.uvicorn.org/)
+- **Backend:** [FastAPI](https://fastapi.tiangolo.com/) (Python 3)
+- **ORM / Databáze:** [SQLAlchemy](https://www.sqlalchemy.org/) + SQLite
+- **Validace dat:** [Pydantic v2](https://docs.pydantic.dev/) (včetně `email-validator`)
+- **Šablonovací systém:** [Jinja2](https://jinja.palletsprojects.com/)
+- **Frontend & Styling:** [Tailwind CSS](https://tailwindcss.com/) (přes CDN) + [HTMX](https://htmx.org/)
+- **Webový server:** [Uvicorn](https://www.uvicorn.org/)
 
 ---
 
@@ -49,3 +49,53 @@ full-erp-example/
 ├── init_db.py               # Skript pro inicializaci databáze
 ├── README.md                # Dokumentace projektu
 └── requirements.txt         # Seznam závislostí
+```
+
+---
+
+## 🛠️ Instalace a spuštění
+
+Pro lokální zprovoznění projektu postupujte podle následujících kroků:
+
+### 1. Klonování repozitáře
+```bash
+git clone <URL_TVÉHO_REPOZITÁŘE>
+cd full-erp-example
+```
+
+### 2. Vytvoření a aktivace virtuálního prostředí
+* **Windows (PowerShell):**
+  ```powershell
+  python -m venv .venv
+  .venv\Scripts\activate
+  ```
+* **macOS / Linux:**
+  ```bash
+  python3 -m venv venv
+  source venv/bin/activate
+  ```
+
+### 3. Instalace závislostí
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Inicializace databáze
+Spusťte skript, který vytvoří databázové tabulky a vloží úvodní testovací data:
+* **Windows:**
+  ```powershell
+  python init_db.py
+  ```
+* **macOS / Linux:**
+  ```bash
+  python3 init_db.py
+  ```
+
+### 5. Spuštění vývojového serveru Uvicorn
+```bash
+uvicorn app.main:app --reload
+```
+
+Aplikace bude následně dostupná na adresách:
+* 🎨 **Uživatelské rozhraní:** `http://127.0.0.1:8000/products-ui`
+* 📖 **API Dokumentace (Swagger):** `http://127.0.0.1:8000/docs`
