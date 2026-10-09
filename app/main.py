@@ -1,5 +1,7 @@
 from typing import List
-from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi import FastAPI, Depends, HTTPException, status, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 
 from app import models, schemas
@@ -10,6 +12,21 @@ app = FastAPI(
     description="REST API for managing storage, orders and partners",
     version="1.0.0"
 )
+
+# Configuration folder with templates
+templates = Jinja2Templates(directory="app/templates")
+
+# --- Frontends endpoints (HTML + HTMX) --- 
+@app.get("/products-ui", response_class=HTMLResponse, include_in_schema=False)
+def products_ui(request: Request, db: Session = Depends(get_db)):
+    """Rendering the products overview page"""
+    products = db.query(models.Product).all()
+    return templates.TemplateResponse(
+        request = request,
+        name = "products.html",
+        context = {"products": products}
+    )
+
 
 @app.get("/",tags=["Health Check"])
 def read_root():
