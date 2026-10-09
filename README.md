@@ -1,26 +1,51 @@
-# 🏢 Modular ERP System Core (v2)
+# Modulární ERP Systém
 
-A modern sales and inventory ERP system built with Python, FastAPI, and SQLAlchemy. This project is designed as a portfolio showcase of advanced software architecture, ORM mapping, Pydantic data validation, and automated testing.
+Lehký, rychlý a modulární ERP systém postavený na moderním Python backendu s reaktivním frontendem bez nutnosti složitých JavaScriptových frameworků.
 
-## 🛠 Tech Stack
-- **Backend:** Python 3.11+, FastAPI
-- **ORM & Database:** SQLAlchemy, SQLite (ready for PostgreSQL)
-- **Data Validation:** Pydantic v2
-- **Frontend (Planned):** HTMX + Jinja2 + Tailwind CSS
-- **Testing:** Pytest
+## 🚀 Hlavní technologie (Tech Stack)
 
-## 📌 Development Progress
-- [x] Architecture design and project structure
-- [x] ORM models (Users, Products, Stock Movements, Orders, Partners)
-- [x] Pydantic schemas (DTOs) for input/output validation
-- [x] Database initialization & test data seeding script (`init_db.py`)
-- [x] REST API endpoints (CRUD)
-- [ ] Web GUI via HTMX
-- [ ] Pytest test suite
+* **Backend:** [FastAPI](https://fastapi.tiangolo.com/) (Python 3)
+* **ORM / Databáze:** [SQLAlchemy](https://www.sqlalchemy.org/) + SQLite
+* **Validace dat:** [Pydantic v2](https://docs.pydantic.dev/) (včetně `email-validator`)
+* **Šablonovací systém:** [Jinja2](https://jinja.palletsprojects.com/)
+* **Frontend & Styling:** [Tailwind CSS](https://tailwindcss.com/) (přes CDN) + [HTMX](https://htmx.org/)
+* **Webový server:** [Uvicorn](https://www.uvicorn.org/)
 
-## 🚀 Database Setup & Running
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-python init_db.py
+---
+
+## ⚙️ Dosavadní progress a plánované funkce
+
+### Hotové funkcionality:
+- [x] **REST API pro produkty:** Plně funkční backendové API dostupné na `/api/products`.
+- [x] **Interaktivní API dokumentace:** Automaticky generované Swagger UI rozhraní na `/docs`.
+- [x] **Databázové modely:** Návrh relací v SQLAlchemy (`Product`, `Category`) s podporou nákupních/prodejních cen a DPH.
+- [x] **Uživatelské rozhraní (`/products-ui`):** Přehledná HTML stránka s katalogem produktů se stylováním v Tailwind CSS.
+- [x] **Inicializační skript:** Automatické založení databázové struktury a vzorových dat (`init_db.py`).
+
+### Plánovaný vývoj (Roadmap):
+- [ ] **HTMX Formulář:** Reaktivní přidávání nových produktů do tabulky bez přenačtení stránky.
+- [ ] **Správa produktů:** Možnost úpravy a mazání produktů přímo z UI v reálném čase.
+- [ ] **Kategorie a sklady:** Modul pro správu kategorií produktů a sledování pohybů na skladě.
+- [ ] **Autentizace:** Registrace, přihlašování a správa uživatelských rolí (např. admin vs. operátor).
+- [ ] **Objednávky a fakturace:** Vytváření odběratelských objednávek a generování faktur.
+
+---
+
+## 📁 Struktura projektu
+
+```text
+full-erp-example/
+├── app/
+│   ├── static/              # Statické soubory (CSS, JS, obrázky)
+│   ├── templates/           # Jinja2 HTML šablony
+│   │   ├── base.html        # Hlavní layout aplikace
+│   │   └── products.html    # Stránka katalogu produktů
+│   ├── database.py          # Připojení k SQLite & SessionLocal
+│   ├── main.py              # Hlavní FastAPI aplikace & endpointy
+│   ├── models.py            # SQLAlchemy databázové modely
+│   └── schemas.py           # Pydantic schémata pro validaci
+├── .gitignore               # Konfigurace ignorovaných souborů pro Git
+├── erp.db                   # SQLite databáze (vytvoří init_db.py)
+├── init_db.py               # Skript pro inicializaci databáze
+├── README.md                # Dokumentace projektu
+└── requirements.txt         # Seznam závislostí
