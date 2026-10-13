@@ -23,7 +23,7 @@ Lehký, rychlý a modulární ERP systém postavený na moderním Python backend
 - [x] **Inicializační skript:** Automatické založení databázové struktury a vzorových dat (`init_db.py`).
 
 ### Plánovaný vývoj (Roadmap):
-- [ ] **HTMX Formulář:** Reaktivní přidávání nových produktů do tabulky bez přenačtení stránky.
+- [x] **HTMX Formulář:** Reaktivní přidávání nových produktů do tabulky bez přenačtení stránky.
 - [ ] **Správa produktů:** Možnost úpravy a mazání produktů přímo z UI v reálném čase.
 - [ ] **Kategorie a sklady:** Modul pro správu kategorií produktů a sledování pohybů na skladě.
 - [ ] **Autentizace:** Registrace, přihlašování a správa uživatelských rolí (např. admin vs. operátor).
