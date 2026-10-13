@@ -34,21 +34,25 @@ Lehký, rychlý a modulární ERP systém postavený na moderním Python backend
 ## 📁 Struktura projektu
 
 ```text
-full-erp-example/
+full_erp_system/
 ├── app/
-│   ├── static/              # Statické soubory (CSS, JS, obrázky)
-│   ├── templates/           # Jinja2 HTML šablony
-│   │   ├── base.html        # Hlavní layout aplikace
-│   │   └── products.html    # Stránka katalogu produktů
-│   ├── database.py          # Připojení k SQLite & SessionLocal
-│   ├── main.py              # Hlavní FastAPI aplikace & endpointy
-│   ├── models.py            # SQLAlchemy databázové modely
-│   └── schemas.py           # Pydantic schémata pro validaci
-├── .gitignore               # Konfigurace ignorovaných souborů pro Git
-├── erp.db                   # SQLite databáze (vytvoří init_db.py)
-├── init_db.py               # Skript pro inicializaci databáze
-├── README.md                # Dokumentace projektu
-└── requirements.txt         # Seznam závislostí
+│   ├── static/                       # Statické soubory (CSS, JS, obrázky)
+│   ├── templates/                    # Jinja2 HTML šablony
+│   │   ├── partials/                 # Reaktivní dílčí šablony pro HTMX
+│   │   │   ├── product_row.html      # HTML řádek tabulky jednoho produktu
+│   │   │   └── product_edit_row.html # Editační řádek formuláře pro úpravu
+│   │   ├── base.html                 # Hlavní společný layout aplikace
+│   │   └── products.html             # Stránka katalogu produktů a formuláře
+│   ├── database.py                   # Připojení k SQLite & SessionLocal
+│   ├── main.py                       # Hlavní FastAPI aplikace & endpointy
+│   ├── models.py                     # SQLAlchemy databázové modely
+│   └── schemas.py                    # Pydantic schémata pro validaci
+├── venv/                             # Virtuální prostředí Pythonu
+├── .gitignore                        # Konfigurace ignorovaných souborů pro Git
+├── erp.db                            # SQLite databáze (vytvoří init_db.py)
+├── init_db.py                        # Skript pro inicializaci databáze
+├── README.md                         # Dokumentace projektu
+└── requirements.txt                  # Seznam závislostí projektu
 ```
 
 ---
@@ -59,7 +63,7 @@ Pro lokální zprovoznění projektu postupujte podle následujících kroků:
 
 ### 1. Klonování repozitáře
 ```bash
-git clone <URL_TVÉHO_REPOZITÁŘE>
+git clone <https://github.com/ProfiSentinel/full-erp-example.git>
 cd full-erp-example
 ```
 
